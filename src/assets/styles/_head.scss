@@ -1,11 +1,43 @@
 .head {
   display: flex;
   flex-direction: column;
-  gap: 3.2rem;
+  align-items: center;
+  gap: 2.4rem;
 
   h1 {
     text-align: center;
     font-size: 4.8rem;
+  }
+
+  a {
+    width: fit-content;
+    position: relative;
+    color: $base-blue;
+    font-size: 2.4rem;
+    font-weight: 200;
+    text-align: center;
+    padding: 1rem;
+    transition: 0.3s all ease;
+
+    &::after {
+      z-index: -1;
+      position: absolute;
+      content: "";
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0.2rem;
+      border-radius: 1rem;
+      background: $base-blue;
+      transition: 0.3s all ease;
+    }
+
+    &:hover {
+      color: $base-white;
+      &::after {
+        height: 100%;
+      }
+    }
   }
 }
 
