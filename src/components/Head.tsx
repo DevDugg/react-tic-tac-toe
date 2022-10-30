@@ -15,9 +15,21 @@ const Head = () => {
     <div className="head">
       <h1>Tic Tac Toe</h1>
       <div className="types">
-        <TypeBtn onclick={() => setBoardType("three")} innerText={"3 x 3"} />
-        <TypeBtn onclick={() => setBoardType("five")} innerText={"5 x 5"} />
-        <TypeBtn onclick={() => setBoardType("seven")} innerText={"7 x 7"} />
+        <TypeBtn
+          onclick={() => setBoardType("three")}
+          innerText={"3 x 3"}
+          disabled={false}
+        />
+        <TypeBtn
+          onclick={() => setBoardType("five")}
+          innerText={"5 x 5"}
+          disabled={true}
+        />
+        <TypeBtn
+          onclick={() => setBoardType("seven")}
+          innerText={"7 x 7"}
+          disabled={true}
+        />
       </div>
     </div>
   );

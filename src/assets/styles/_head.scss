@@ -31,4 +31,11 @@
     color: $base-white;
     transition: 0.2s ease;
   }
+
+  &:disabled {
+    cursor: not-allowed;
+    background: gray;
+    color: $base-white;
+    border-color: gray;
+  }
 }
