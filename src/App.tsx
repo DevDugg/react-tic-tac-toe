@@ -1,6 +1,7 @@
 // Modules
 import { useMemo, useState, useEffect } from "react";
 import { Matrix } from "ts-matrix";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 // Context
 import { defaultScore, GameContext } from "./context/GameContext";
@@ -296,21 +297,27 @@ const App = () => {
   }, [JSON.stringify(gameState)]);
 
   return (
-    <div className="App">
-      <GameContext.Provider
-        value={{ gameStateMemo, turnMemo, boardTypeMemo, scoreMemo }}
-      >
-        <main className="main">
-          <div className="container">
-            <div className="main-inner">
-              <Head />
-              <Scores />
-              <GameBoard />
-            </div>
-          </div>
-        </main>
-      </GameContext.Provider>
-    </div>
+    <HashRouter>
+      <div className="App">
+        <Routes>
+          <Route path="/">
+            <GameContext.Provider
+              value={{ gameStateMemo, turnMemo, boardTypeMemo, scoreMemo }}
+            >
+              <main className="main">
+                <div className="container">
+                  <div className="main-inner">
+                    <Head />
+                    <Scores />
+                    <GameBoard />
+                  </div>
+                </div>
+              </main>
+            </GameContext.Provider>
+          </Route>
+        </Routes>
+      </div>
+    </HashRouter>
   );
 };
 
