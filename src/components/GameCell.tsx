@@ -25,12 +25,14 @@ const GameCell = ({ value, position }: Props) => {
     <div
       className={`cell ${boardType}`}
       onClick={() => {
-        gameState[boardType][position.row][position.column] = turn;
-        setGameState(gameState);
-        if (turn === "x") {
-          setTurn("o");
-        } else {
-          setTurn("x");
+        if (gameState[boardType][position.row][position.column] === "") {
+          gameState[boardType][position.row][position.column] = turn;
+          setGameState(gameState);
+          if (turn === "x") {
+            setTurn("o");
+          } else {
+            setTurn("x");
+          }
         }
       }}
     >

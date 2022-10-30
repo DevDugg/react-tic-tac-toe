@@ -1,5 +1,5 @@
 // Modules
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { GameContext } from "../context/GameContext";
 import { v4 as uuidv4 } from "uuid";
 
@@ -10,10 +10,12 @@ import { GlobalContextType } from "../types/GameContext.type";
 import GameCell from "./GameCell";
 
 const GameBoard = () => {
-  const { boardTypeMemo, gameStateMemo } =
+  const { boardTypeMemo, gameStateMemo, scoreMemo } =
     useContext<GlobalContextType>(GameContext);
   const { boardType } = boardTypeMemo;
-  const { gameState } = gameStateMemo;
+  const { gameState, setGameState } = gameStateMemo;
+  const { setScore } = scoreMemo;
+
   return (
     <section className="board-wrapper">
       <div className={`board ${boardType}`}>
@@ -22,7 +24,7 @@ const GameBoard = () => {
             return (
               <GameCell
                 key={uuidv4()}
-                value={gameState[boardType][rowIndex][columnIndex]}
+                value={element}
                 position={{ row: rowIndex, column: columnIndex }}
               />
             );
