@@ -1,0 +1,29 @@
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 15rem;
+  height: 15rem;
+  border: 0.2rem solid $light-black;
+
+  &.three {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  &.five {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  &.seven {
+    width: 7rem;
+    height: 7rem;
+  }
+
+  svg {
+    width: 80%;
+    height: 80%;
+  }
+}
