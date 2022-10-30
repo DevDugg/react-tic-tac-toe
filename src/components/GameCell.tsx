@@ -26,7 +26,6 @@ const GameCell = ({ value, position }: Props) => {
       className={`cell ${boardType}`}
       onClick={() => {
         gameState[boardType][position.row][position.column] = turn;
-        console.log(gameState[boardType]);
         setGameState(gameState);
         if (turn === "x") {
           setTurn("o");
