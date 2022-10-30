@@ -1,0 +1,36 @@
+.scores {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.scores-names,
+.scores-values {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  * {
+    justify-self: center;
+  }
+}
+
+.scores-names {
+  input {
+    text-align: center;
+    font-size: 2.4rem;
+    outline: 0.2rem solid transparent;
+    transition: 0.3s all ease;
+
+    &:focus-within {
+      outline: 0.2rem solid $light-black;
+      transition: 0.3s all ease;
+    }
+  }
+}
+
+.scores-values {
+  span {
+    font-size: 2.4rem;
+    font-weight: bold;
+  }
+}

@@ -2,7 +2,7 @@
 import { useMemo, useState } from "react";
 
 // Context
-import { GameContext } from "./context/GameContext";
+import { defaultScore, GameContext } from "./context/GameContext";
 
 // Types
 import {
@@ -10,6 +10,8 @@ import {
   TurnStateType,
   BoardTypeType,
   GameContextStateType,
+  ScoreStateType,
+  ScoreType,
 } from "./types/GameContext.type";
 
 // Helpers
@@ -20,13 +22,18 @@ import "./assets/styles/style.scss";
 
 // Components
 import Head from "./components/Head";
+import Scores from "./components/Scores";
 import GameBoard from "./components/GameBoard";
 
 const App = () => {
+  // State
   const [gameState, setGameState] = useState<GameContextType>(defaultValue);
   const [turn, setTurn] = useState<TurnStateType["turn"]>("x");
   const [boardType, setBoardType] =
     useState<BoardTypeType["boardType"]>("three");
+  const [score, setScore] = useState<ScoreType>(defaultScore);
+
+  // Memo
   const gameStateMemo = useMemo<GameContextStateType>(
     () => ({
       gameState,
@@ -42,13 +49,21 @@ const App = () => {
     () => ({ boardType, setBoardType }),
     [boardType, setBoardType]
   );
+  const scoreMemo = useMemo<ScoreStateType>(
+    () => ({ score, setScore }),
+    [score, setScore]
+  );
+
   return (
     <div className="App">
-      <GameContext.Provider value={{ gameStateMemo, turnMemo, boardTypeMemo }}>
+      <GameContext.Provider
+        value={{ gameStateMemo, turnMemo, boardTypeMemo, scoreMemo }}
+      >
         <main className="main">
           <div className="container">
             <div className="main-inner">
               <Head />
+              <Scores />
               <GameBoard />
             </div>
           </div>

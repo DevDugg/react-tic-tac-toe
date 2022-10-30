@@ -22,8 +22,19 @@ export type BoardTypeType = {
   setBoardType: React.Dispatch<SetStateAction<"three" | "five" | "seven">>;
 };
 
+export interface ScoreType {
+  player_1: { name: string; score: number };
+  player_2: { name: string; score: number };
+}
+
+export type ScoreStateType = {
+  score: ScoreType;
+  setScore: React.Dispatch<SetStateAction<ScoreType>>;
+};
+
 export type GlobalContextType = {
   gameStateMemo: GameContextStateType;
   turnMemo: TurnStateType;
   boardTypeMemo: BoardTypeType;
+  scoreMemo: ScoreStateType;
 };

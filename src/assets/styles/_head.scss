@@ -2,8 +2,11 @@
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
-  text-align: center;
-  font-size: 2.4rem;
+
+  h1 {
+    text-align: center;
+    font-size: 4.8rem;
+  }
 }
 
 .types {
@@ -19,7 +22,7 @@
   font-weight: bold;
   color: $base-black;
   padding: 1.2rem 2.4rem;
-  border: 0.1rem solid $base-blue;
+  border: 0.2rem solid $base-blue;
   border-radius: 3rem;
   transition: 0.2s ease;
 
