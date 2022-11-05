@@ -10,16 +10,15 @@ import { GlobalContextType } from "../types/GameContext.type";
 import GameCell from "./GameCell";
 
 const GameBoard = () => {
-  const { boardTypeMemo, gameStateMemo, scoreMemo } =
+  const { gameStateMemo, scoreMemo } =
     useContext<GlobalContextType>(GameContext);
-  const { boardType } = boardTypeMemo;
   const { gameState, setGameState } = gameStateMemo;
   const { setScore } = scoreMemo;
 
   return (
     <section className="board-wrapper">
-      <div className={`board ${boardType}`}>
-        {gameState[boardType].map((array, rowIndex) => {
+      <div className={`board three`}>
+        {gameState.three.map((array, rowIndex) => {
           return array.map((element, columnIndex) => {
             return (
               <GameCell

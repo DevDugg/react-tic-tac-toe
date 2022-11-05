@@ -18,15 +18,14 @@ import { GlobalContextType } from "../types/GameContext.type";
 
 const GameCell = ({ value, position }: Props) => {
   const context = useContext<GlobalContextType>(GameContext);
-  const { boardType } = context.boardTypeMemo;
   const { gameState, setGameState } = context.gameStateMemo;
   const { turn, setTurn } = context.turnMemo;
   return (
     <div
-      className={`cell ${boardType}`}
+      className={`cell three`}
       onClick={() => {
-        if (gameState[boardType][position.row][position.column] === "") {
-          gameState[boardType][position.row][position.column] = turn;
+        if (gameState.three[position.row][position.column] === "") {
+          gameState.three[position.row][position.column] = turn;
           setGameState(gameState);
           if (turn === "x") {
             setTurn("o");
