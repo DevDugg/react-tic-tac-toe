@@ -1,0 +1,17 @@
+# This is a basic workflow that is manually triggered
+
+name: Auto deploy
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu@latest
+    steps:
+    - name: Deploy
+      run: npm run deploy
