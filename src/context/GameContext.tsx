@@ -6,9 +6,9 @@ import { GameContextType, ScoreType } from "../types/GameContext.type";
 
 export const defaultValue: GameContextType = {
   three: [
-    ["", "", ""],
-    ["", "", ""],
-    ["", "", ""],
+    [0, 0, 0],
+    [0, 0, 0],
+    [0, 0, 0],
   ],
 };
 

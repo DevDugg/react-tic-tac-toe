@@ -5,7 +5,7 @@ import { GameContext } from "../context/GameContext";
 
 // Types
 interface Props {
-  value: string;
+  value: number;
   position: { row: number; column: number };
 }
 
@@ -24,22 +24,22 @@ const GameCell = ({ value, position }: Props) => {
     <div
       className={`cell three`}
       onClick={() => {
-        if (gameState.three[position.row][position.column] === "") {
+        if (gameState.three[position.row][position.column] === 0) {
           gameState.three[position.row][position.column] = turn;
           setGameState(gameState);
-          if (turn === "x") {
-            setTurn("o");
+          if (turn === 1) {
+            setTurn(2);
           } else {
-            setTurn("x");
+            setTurn(1);
           }
         }
       }}
     >
-      {value === "" ? null : value === "x" ? (
+      {value === 0 ? null : value === 1 ? (
         <IconContext.Provider value={{ color: "red" }}>
           <TfiClose />
         </IconContext.Provider>
-      ) : value === "o" ? (
+      ) : value === 2 ? (
         <IconContext.Provider value={{ color: "blue" }}>
           <BsCircle />
         </IconContext.Provider>

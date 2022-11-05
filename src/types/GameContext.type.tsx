@@ -2,7 +2,7 @@
 import React, { SetStateAction } from "react";
 
 export interface GameContextType {
-  three: string[][];
+  three: number[][];
 }
 
 export type GameContextStateType = {
@@ -11,8 +11,8 @@ export type GameContextStateType = {
 };
 
 export type TurnStateType = {
-  turn: "x" | "o";
-  setTurn: React.Dispatch<SetStateAction<"x" | "o">>;
+  turn: 1 | 2;
+  setTurn: React.Dispatch<SetStateAction<1 | 2>>;
 };
 
 export interface ScoreType {

@@ -28,7 +28,7 @@ import GameBoard from "./components/GameBoard";
 const App = () => {
   // State
   const [gameState, setGameState] = useState<GameContextType>(defaultValue);
-  const [turn, setTurn] = useState<TurnStateType["turn"]>("x");
+  const [turn, setTurn] = useState<TurnStateType["turn"]>(1);
   const [score, setScore] = useState<ScoreType>(defaultScore);
 
   // Memo
@@ -52,29 +52,29 @@ const App = () => {
   useEffect(() => {
     let reset: boolean = false;
     // Horizontal check
-    gameState.three.forEach((array: string[]) => {
-      if (array.every((cell: string) => cell === "x")) {
+    gameState.three.forEach((array: number[]) => {
+      if (array.every((cell: number) => cell === 1)) {
         reset = true;
         setGameState({
           three: [
-            ["", "", ""],
-            ["", "", ""],
-            ["", "", ""],
+            [0, 0, 0],
+            [0, 0, 0],
+            [0, 0, 0],
           ],
         });
-        setTurn("x");
+        setTurn(1);
         setScore({
           ...score,
           player_1: { ...score.player_1, score: score.player_1.score + 1 },
         });
-      } else if (array.every((cell: string) => cell === "o")) {
+      } else if (array.every((cell: number) => cell === 2)) {
         reset = true;
-        setTurn("x");
+        setTurn(1);
         setGameState({
           three: [
-            ["", "", ""],
-            ["", "", ""],
-            ["", "", ""],
+            [0, 0, 0],
+            [0, 0, 0],
+            [0, 0, 0],
           ],
         });
         setScore({
@@ -85,29 +85,29 @@ const App = () => {
     });
     // Vertical check
     const transposed = new Matrix(3, 3, gameState.three).transpose().values;
-    transposed.forEach((array: string[]) => {
-      if (array.every((cell: string) => cell === "x")) {
+    transposed.forEach((array: number[]) => {
+      if (array.every((cell: number) => cell === 1)) {
         reset = true;
         setGameState({
           three: [
-            ["", "", ""],
-            ["", "", ""],
-            ["", "", ""],
+            [0, 0, 0],
+            [0, 0, 0],
+            [0, 0, 0],
           ],
         });
-        setTurn("x");
+        setTurn(1);
         setScore({
           ...score,
           player_1: { ...score.player_1, score: score.player_1.score + 1 },
         });
-      } else if (array.every((cell: string) => cell === "o")) {
+      } else if (array.every((cell: number) => cell === 2)) {
         reset = true;
-        setTurn("x");
+        setTurn(1);
         setGameState({
           three: [
-            ["", "", ""],
-            ["", "", ""],
-            ["", "", ""],
+            [0, 0, 0],
+            [0, 0, 0],
+            [0, 0, 0],
           ],
         });
         setScore({
@@ -118,41 +118,41 @@ const App = () => {
     });
     // Diagonal check
     if (
-      (gameState.three[0][0] === "x" &&
-        gameState.three[1][1] === "x" &&
-        gameState.three[2][2] === "x") ||
-      (gameState.three[0][2] === "x" &&
-        gameState.three[1][1] === "x" &&
-        gameState.three[2][0] === "x")
+      (gameState.three[0][0] === 1 &&
+        gameState.three[1][1] === 1 &&
+        gameState.three[2][2] === 1) ||
+      (gameState.three[0][2] === 1 &&
+        gameState.three[1][1] === 1 &&
+        gameState.three[2][0] === 1)
     ) {
       reset = true;
       setGameState({
         three: [
-          ["", "", ""],
-          ["", "", ""],
-          ["", "", ""],
+          [0, 0, 0],
+          [0, 0, 0],
+          [0, 0, 0],
         ],
       });
-      setTurn("x");
+      setTurn(1);
       setScore({
         ...score,
         player_1: { ...score.player_1, score: score.player_1.score + 1 },
       });
     } else if (
-      (gameState.three[0][0] === "o" &&
-        gameState.three[1][1] === "o" &&
-        gameState.three[2][2] === "o") ||
-      (gameState.three[0][2] === "o" &&
-        gameState.three[1][1] === "o" &&
-        gameState.three[2][0] === "o")
+      (gameState.three[0][0] === 2 &&
+        gameState.three[1][1] === 2 &&
+        gameState.three[2][2] === 2) ||
+      (gameState.three[0][2] === 2 &&
+        gameState.three[1][1] === 2 &&
+        gameState.three[2][0] === 2)
     ) {
       reset = true;
-      setTurn("x");
+      setTurn(1);
       setGameState({
         three: [
-          ["", "", ""],
-          ["", "", ""],
-          ["", "", ""],
+          [0, 0, 0],
+          [0, 0, 0],
+          [0, 0, 0],
         ],
       });
       setScore({
@@ -163,14 +163,14 @@ const App = () => {
 
     if (
       !reset &&
-      gameState.three.flat().every((value: string) => value !== "")
+      gameState.three.flat().every((value: number) => value !== 0)
     ) {
-      setTurn("x");
+      setTurn(1);
       setGameState({
         three: [
-          ["", "", ""],
-          ["", "", ""],
-          ["", "", ""],
+          [0, 0, 0],
+          [0, 0, 0],
+          [0, 0, 0],
         ],
       });
     }

@@ -10,10 +10,8 @@ import { GlobalContextType } from "../types/GameContext.type";
 import GameCell from "./GameCell";
 
 const GameBoard = () => {
-  const { gameStateMemo, scoreMemo } =
-    useContext<GlobalContextType>(GameContext);
-  const { gameState, setGameState } = gameStateMemo;
-  const { setScore } = scoreMemo;
+  const { gameStateMemo } = useContext<GlobalContextType>(GameContext);
+  const { gameState } = gameStateMemo;
 
   return (
     <section className="board-wrapper">
