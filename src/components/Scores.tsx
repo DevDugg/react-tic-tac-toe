@@ -22,23 +22,25 @@ const Scores = () => {
           ref={inputRef}
           type="text"
           value={score.player_1.name}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+            localStorage.setItem("player_1", e.target.value);
             setScore({
               ...score,
               player_1: { ...score.player_1, name: e.target.value },
-            })
-          }
+            });
+          }}
         />
         <input
           ref={inputRef2}
           type="text"
           value={score.player_2.name}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+            localStorage.setItem("player_2", e.target.value);
             setScore({
               ...score,
               player_2: { ...score.player_2, name: e.target.value },
-            })
-          }
+            });
+          }}
         />
         <button type="submit"></button>
       </form>
