@@ -9,13 +9,16 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
 
-  * {
+  span {
+    text-align: center;
+    width: 100%;
     justify-self: center;
   }
 }
 
 .scores-names {
   input {
+    width: 100%;
     text-align: center;
     font-size: 2.4rem;
     outline: 0.2rem solid transparent;
