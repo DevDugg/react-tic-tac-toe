@@ -17,3 +17,21 @@
     height: 80%;
   }
 }
+
+@media screen and (max-width: 550px) {
+  .cell {
+    &.three {
+      width: 12rem;
+      height: 12rem;
+    }
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .cell {
+    &.three {
+      width: 10rem;
+      height: 10rem;
+    }
+  }
+}
