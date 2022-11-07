@@ -20,6 +20,7 @@ const Scores = () => {
       >
         <input
           ref={inputRef}
+          spellCheck="false"
           type="text"
           value={score.player_1.name}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
@@ -32,6 +33,7 @@ const Scores = () => {
         />
         <input
           ref={inputRef2}
+          spellCheck="false"
           type="text"
           value={score.player_2.name}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
