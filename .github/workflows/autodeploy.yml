@@ -14,4 +14,4 @@ jobs:
     concurrency: production
     steps:
       - name: deploy
-        run: npm run deploy "./"
+        run: npm run deploy  "/home/runner/work/react-tic-tac-toe/"
