@@ -8,9 +8,9 @@ on:
 jobs:
   deployment:
     runs-on: ubuntu-latest
-    environment: production
+    environment: github-pages
     concurrency: production
     steps:
       - name: deploy
-        run: npm run deploy
+        run: npm run deploy "./"
       
