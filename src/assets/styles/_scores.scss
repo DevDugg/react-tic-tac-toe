@@ -10,6 +10,10 @@
   align-items: center;
   justify-content: space-evenly;
 
+  &.reversed {
+    flex-direction: row-reverse;
+  }
+
   span {
     text-align: center;
     width: 100%;
@@ -37,5 +41,26 @@
   span {
     font-size: 2.4rem;
     font-weight: bold;
+  }
+}
+
+.scores-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  button {
+    width: 70%;
+    font-size: 2rem;
+    background: $base-blue;
+    color: $base-white;
+    border-radius: 0.5rem;
+    padding: 0.8rem 0;
+    cursor: pointer;
+    transition: 0.3s ease all;
+
+    &:hover {
+      background: $hover-blue;
+      transition: 0.3s ease all;
+    }
   }
 }

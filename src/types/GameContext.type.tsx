@@ -18,6 +18,7 @@ export type TurnStateType = {
 export interface ScoreType {
   player_1: { name: string; score: number };
   player_2: { name: string; score: number };
+  reversed: boolean;
 }
 
 export type ScoreStateType = {
