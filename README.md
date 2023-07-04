@@ -64,6 +64,6 @@ http://localhost:3000
 ## Contact me
 
 If you have any questions, feedback, or suggestions regarding this project, please feel free to reach out to us using the following contact information:
-- [Email](mr.aydogdy02@gmail.com)
+- [Email](mailto:mr.aydogdy02@gmail.com)
 - [Instagram](https://www.instagram.com/duggthevicious)
 - [GitHub](https://www.github.com/VividTruthKeeper)
