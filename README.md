@@ -1,6 +1,6 @@
 # [Tic Tac Toe](https://vividtruthkeeper.github.io/react-tic-tac-toe/)
 
-This is a web password generator project built with Next.js, TypeScript, Tailwind CSS, React Icons, UUID, and React Toastify. The purpose of this project is to provide a simple and secure way to generate strong and unique passwords for various online accounts.
+This is a tic-tac-toe web game for two players.
 
 ## Features
 
